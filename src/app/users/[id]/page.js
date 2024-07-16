@@ -4,6 +4,14 @@ async function getUser(id) {
   return user;
 }
 
+export async function generateMetadata({ params: { id } }) {
+  const user = await getUser(id);
+
+  return {
+    title: `user - ${user.name}`,
+  };
+}
+
 export default async function User({ params: { id } }) {
   const user = await getUser(id);
 
