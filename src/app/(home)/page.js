@@ -53,7 +53,12 @@ export default function Home() {
       </button>
       <ul className="flex flex-col gap-y-3">
         {todos.map((todo) => (
-          <Todo todo={todo} setTodos={setTodos} setEditTodoId={setEditTodoId} />
+          <Todo
+            key={todo.id}
+            todo={todo}
+            setTodos={setTodos}
+            setEditTodoId={setEditTodoId}
+          />
         ))}
       </ul>
     </div>
